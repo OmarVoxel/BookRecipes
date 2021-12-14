@@ -10,7 +10,18 @@ namespace BookRecipes.Tests
         {
             ModelData modelData = new ModelData(@"..\..\..\..\Recipes.csv");
             modelData.Exists().Should().Be(true);
-            modelData.IsNotEmpty().Should().Be(false);
+            modelData.IsEmpty().Should().Be(false);
         }
+        
+        [Fact]
+        public void CheckIfTheFirstElemmentInTheListIsARecipe()
+        {
+            ModelData modelData = new ModelData(@"..\..\..\..\Recipes.csv");
+
+            modelData.Read().First().Should().Be("Pollo a la cerveza");
+        }
+
+
+        
     }
 }
