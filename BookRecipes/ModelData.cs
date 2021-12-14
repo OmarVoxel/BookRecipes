@@ -25,7 +25,17 @@ namespace BookRecipes
 
     public class ModelData
     {
-        
+        private readonly File _file;
 
+        public ModelData(string path)
+            => _file = new File(path);
+        
+        public string ShowRecipes()
+        {
+            if (_file.IsEmpty())
+                return "The doccument file is empty";
+            
+            return "";
+        }
     }
 }

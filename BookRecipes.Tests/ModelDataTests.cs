@@ -8,8 +8,8 @@ namespace BookRecipes.Tests
         [Fact] 
         public void CsvReturnsAMessegeWhenIsEmpty()
         {
-            ModelData modelData = new(@"..\..\..\..\Emtpy.csv");
-            ModelData.ShowRecipes().Should().Be("The doccument file is empty");
+            ModelData modelData = new(@"..\..\..\..\Empty.csv");
+            modelData.ShowRecipes().Should().Be("The doccument file is empty");
         }
     }
 }
