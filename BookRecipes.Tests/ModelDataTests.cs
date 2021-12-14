@@ -1,28 +1,15 @@
-using System.Linq;
-using Xunit;
+﻿using Xunit;
 using FluentAssertions;
 
 namespace BookRecipes.Tests
 {
     public class ModelDataTests
     {
-        [Fact]
-        public void FileExistsAndIsNotEmpty()
+        [Fact] 
+        public void CsvReturnsAMessegeWhenIsEmpty()
         {
-            ModelData modelData = new ModelData(@"..\..\..\..\Recipes.csv");
-            modelData.Exists().Should().Be(true);
-            modelData.IsEmpty().Should().Be(false);
+            ModelData modelData = new(@"..\..\..\..\Emtpy.csv");
+            ModelData.ShowRecipes().Should().Be("The doccument file is empty");
         }
-        
-        [Fact]
-        public void CheckIfTheFirstElemmentInTheListIsARecipe()
-        {
-            ModelData modelData = new ModelData(@"..\..\..\..\Recipes.csv");
-
-            modelData.Read().First().Should().Be("Pollo a la cerveza");
-        }
-
-
-        
     }
 }
