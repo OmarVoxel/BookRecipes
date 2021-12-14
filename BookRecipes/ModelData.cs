@@ -1,4 +1,6 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 
 namespace BookRecipes
 {
@@ -14,6 +16,11 @@ namespace BookRecipes
 
         public bool IsEmpty() 
             => new FileInfo(_path).Length == 0;
+
+        public List<string> Read() => 
+            File.ReadAllLines(_path)
+                .Select(x => x.Trim('"'))
+                .ToList();
         
     }
 }
