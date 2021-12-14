@@ -2,9 +2,11 @@
 {
     public class ModelData
     {
-        public bool Exists()
-        {
-            throw new System.NotImplementedException();
-        }
+        private string _path;
+
+        public ModelData(string path) 
+            => _path = path;
+
+        public bool Exists() => System.IO.File.Exists(_path);
     }
 }

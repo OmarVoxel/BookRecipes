@@ -8,7 +8,7 @@ namespace BookRecipes.Tests
         [Fact]
         public void FileExists()
         {
-            ModelData modelData = new ModelData();
+            ModelData modelData = new ModelData(@"..\..\..\..\Recipes.csv");
             modelData.Exists().Should().Be(true);
         }
     }
