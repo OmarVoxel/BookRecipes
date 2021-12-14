@@ -32,6 +32,9 @@ namespace BookRecipes
         
         public string ShowRecipes()
         {
+            if (!_file.Exists())
+                return "The doccument doesn't exist";
+            
             if (_file.IsEmpty())
                 return "The doccument file is empty";
             
